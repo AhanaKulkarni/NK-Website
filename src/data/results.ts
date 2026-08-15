@@ -61,8 +61,6 @@ export const nk_east_24_25: Topper[] = [
   { name: 'Preet Jain', score: 'Top Scorer', photoId: 'preet-jain' },
   { name: 'Purvansh Mewada', score: '93.2%', photoId: 'purvansh-mewada' },
   { name: 'Raj Pawar', score: 'Top Scorer', photoId: 'raj-pawar' },
-  { name: 'Ram Barabde', score: 'Top Scorer', photoId: 'ram-barabde' },
-  { name: 'Ram Shukla', score: 'Top Scorer', photoId: 'ram-shukla' },
   { name: 'Rashi Agrwal', score: 'Top Scorer', photoId: 'rashi-agrwal' },
   { name: 'Sai Malandkar', score: 'Top Scorer', photoId: 'sai-malandkar' },
   { name: 'Sanjeevani Bapat', score: '91%', photoId: 'sanjeevani-bapat' },

@@ -594,15 +594,29 @@
 }
 
 @media (max-width: 1024px) {
-  .heroContainer { flex-direction: column; }
+  .heroContainer { flex-direction: column; text-align: center; }
+  .heroActions { justify-content: center; }
   .topperFloatingCard { left: 50%; transform: translateX(-50%); bottom: -2rem; width: max-content; }
-  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); margin-top: -3rem; }
   .programsGrid, .whyGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .statsGrid, .programsGrid, .whyGrid { grid-template-columns: 1fr; }
+  .heroSection { padding: 3rem 0; }
+  .heroTitle { font-size: 2.5rem; }
+  .heroSubtitle { font-size: 1rem; margin: 0 auto 2rem auto; }
+  .heroImageWrapper { height: 350px; }
+  .statsGrid { grid-template-columns: 1fr; margin-top: 2rem; margin-bottom: 2rem; gap: 0; }
+  .statItem { padding: 2rem 1rem; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .statItem:last-child { border-bottom: none; }
+  .programsGrid, .whyGrid { grid-template-columns: 1fr; }
   .sectionHeaderRow { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .sectionHeaderRow h2 { font-size: 2rem; }
+  .programsSection, .whySection, .resultsSection, .toppersSection { padding: 4rem 0; }
+  .whyCTABox { padding: 2rem 1.5rem; }
+  .whyCTABox h3 { font-size: 1.75rem; }
+  .filterContainer { flex-direction: column; gap: 1.5rem; }
+  .filterGroup { flex-wrap: wrap; }
 }
 
 .extremeToppers {

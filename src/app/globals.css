@@ -1,17 +1,17 @@
 :root {
-  /* Color System from Audit (Light Theme Focus) */
-  --color-primary: #1A3C7A; /* Navy */
-  --color-accent: #F5A623; /* Gold */
-  --color-background: #F8FAFC; /* Premium Off-white (Slate 50) */
+  /* Brand Color System */
+  --color-primary: #102B5E; /* Brand Navy */
+  --color-accent: #D31C2D; /* Brand Red */
+  --color-background: #FFFFFF; /* Pure White BG as requested */
   --color-surface: #FFFFFF;
-  --color-supporting: #64748B; /* Muted */
-  --color-text-main: #0F172A; /* Slate 900 for high contrast text */
+  --color-supporting: #475569; /* Muted slate */
+  --color-text-main: #0F172A; /* Slate 900 */
   --color-white: #FFFFFF;
 
-  /* Premium Shadows */
-  --shadow-diffuse: 0 20px 40px -10px rgba(26, 60, 122, 0.05), 0 1px 3px rgba(26, 60, 122, 0.02);
-  --shadow-hover-lift: 0 30px 60px -12px rgba(26, 60, 122, 0.1), 0 4px 12px rgba(26, 60, 122, 0.04);
-  --shadow-glow: 0 0 40px rgba(245, 166, 35, 0.15);
+  /* Shadows - Updated to match new brand colors */
+  --shadow-diffuse: 0 10px 30px -10px rgba(16, 43, 94, 0.08), 0 1px 3px rgba(16, 43, 94, 0.03);
+  --shadow-hover-lift: 0 20px 40px -12px rgba(16, 43, 94, 0.12), 0 4px 12px rgba(16, 43, 94, 0.06);
+  --shadow-glow: 0 0 40px rgba(211, 28, 45, 0.15);
   
   /* Radii */
   --radius-card: 24px;

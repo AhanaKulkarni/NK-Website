@@ -12,7 +12,7 @@ interface CountingNumberProps {
 
 export function CountingNumber({ value, suffix = "", prefix = "", duration = 2 }: CountingNumberProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
