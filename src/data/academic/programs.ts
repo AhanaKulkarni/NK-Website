@@ -139,8 +139,8 @@ export const programsData: Record<string, ProgramOverview> = {
       'Doubt clearing sessions'
     ]
   },
-  'jee-mht-cet': {
-    id: 'jee-mht-cet',
+  'jee': {
+    id: 'jee',
     title: 'JEE / MHT-CET',
     category: 'Competitive Exams',
     shortDescription: 'Engineering and Pharmacy entrance exam preparation.',

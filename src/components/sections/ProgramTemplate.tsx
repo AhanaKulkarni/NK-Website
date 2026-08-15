@@ -1,13 +1,14 @@
-import { notFound } from 'next/navigation';
+import React from 'react';
 import { programsData } from '@/data/academic/programs';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import { ChevronRight, CheckCircle2, BookOpen, GraduationCap, MapPin } from 'lucide-react';
-import styles from './page.module.css';
+import styles from '@/app/programs/page.module.css';
+import { notFound } from 'next/navigation';
 
-export default function ProgramPage({ params }: { params: { programId: string } }) {
-  const program = programsData[params.programId];
+export function ProgramTemplate({ programId }: { programId: string }) {
+  const program = programsData[programId];
   
   if (!program) {
     notFound();
