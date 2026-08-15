@@ -12,12 +12,17 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <div className={styles.page}>
+      {/* Independence Day Banner */}
+      <div className={styles.independenceBanner}>
+        <span className={styles.flagIcon}>🇮🇳</span> Happy 80th Independence Day! Celebrating the spirit of freedom and academic excellence.
+      </div>
+
       {/* 1. Hero Section */}
       <section className={styles.heroSection}>
         <ScrollReveal className={`container ${styles.heroContainer}`}>
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
-              <span className={styles.starIcon}>★</span> Borivali's most trusted coaching - Since 2019
+              <span className={styles.starIcon}>🇮🇳</span> Borivali's most trusted coaching - Since 2019
             </div>
             <h1 className={styles.heroTitle}>
               Your child's<br />success starts <span className={styles.heroItalic}>here.</span>
