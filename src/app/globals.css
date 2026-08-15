@@ -1,7 +1,7 @@
 :root {
   /* Brand Color System */
   --color-primary: #102B5E; /* Brand Navy */
-  --color-accent: #B71C1C; /* Deeper Brand Red - less flashy */
+  --color-accent: #E53935; /* Clean vibrant red */
   --color-background: #FFFFFF; /* Pure White BG as requested */
   --color-surface: #FFFFFF;
   --color-supporting: #475569; /* Muted slate */

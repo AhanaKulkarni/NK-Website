@@ -4,26 +4,7 @@
   background-color: #FAFAFA;
 }
 
-.independenceBanner {
-  background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
-  color: #1a2a47;
-  text-align: center;
-  padding: 0.75rem 1rem;
-  font-weight: 700;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 50;
-  border-bottom: 2px solid rgba(0,0,0,0.05);
-}
 
-.flagIcon {
-  font-size: 1.25rem;
-}
 
 /* 1. Hero Section */
 .heroSection {

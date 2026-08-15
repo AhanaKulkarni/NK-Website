@@ -12,10 +12,7 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <div className={styles.page}>
-      {/* Independence Day Banner */}
-      <div className={styles.independenceBanner}>
-        <span className={styles.flagIcon}>🇮🇳</span> Happy 80th Independence Day! Celebrating the spirit of freedom and academic excellence.
-      </div>
+
 
       {/* 1. Hero Section */}
       <section className={styles.heroSection}>
