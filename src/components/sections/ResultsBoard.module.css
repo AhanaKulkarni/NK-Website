@@ -161,3 +161,210 @@
   margin-top: 0.35rem;
   font-weight: 500;
 }
+
+.filterContainer {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-supporting);
+}
+
+.pillGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+}
+
+.filterBtnActive {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.emptyState {
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--color-supporting);
+  font-size: 1.1rem;
+}
+
+.extremeToppers {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.highlightTopper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.highlightPhotoWrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlightPhoto {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.showInitialsHighlight .highlightPhoto {
+  display: none;
+}
+
+.initialsHighlight {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.showInitialsHighlight .initialsHighlight {
+  display: block;
+}
+
+.highlightTrophy {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 15px rgba(239, 179, 73, 0.4);
+  white-space: nowrap;
+}
+
+.highlightName {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.highlightScore {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.highlightSchool {
+  font-size: 1rem;
+  color: var(--color-supporting);
+}
+
+.runnerUpGrid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.runnerUpCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.runnerUpPhotoWrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 6px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.runnerUpPhoto {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.showInitialsRunnerUp .runnerUpPhoto {
+  display: none;
+}
+
+.initialsRunnerUp {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.showInitialsRunnerUp .initialsRunnerUp {
+  display: block;
+}
+
+.runnerUpName {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.runnerUpScore {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  font-weight: 700;
+}

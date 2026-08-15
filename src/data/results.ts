@@ -1,13 +1,14 @@
 export type Topper = {
   name: string;
   score: string;
-  school?: string;
   photoId: string;
+  school?: string;
   academicYear?: string;
   board?: string;
   classLevel?: string;
   subject?: string;
   programCategory?: string;
+  branch?: string;
 };
 
 export const nk_east_23_24: Topper[] = [
@@ -196,6 +197,18 @@ export const nk_west_25_26: Topper[] = [
   { name: 'Ustav Gupta', score: 'Top Scorer', photoId: 'ustav-gupta' },
   { name: 'Whatsapp Image 2026-02-14 At 7.17.59 Pm', score: 'Top Scorer', photoId: 'whatsapp-image-2026-02-14-at-7-17-59-pm' },
   { name: 'Whatsapp Image 2026-04-16 At 1.02.29 Pm-removebg-preview', score: 'Top Scorer', photoId: 'whatsapp-image-2026-04-16-at-1-02-29-pm-removebg-preview' },
+];
+
+const enhance = (arr: Topper[], branch: string, board: string, academicYear: string): Topper[] => 
+  arr.map(t => ({ ...t, branch, board, academicYear }));
+
+export const allToppers: Topper[] = [
+  ...enhance(nk_east_23_24, 'NK East', 'CBSE', '2023-24'),
+  ...enhance(nk_east_24_25, 'NK East', 'CBSE', '2024-25'),
+  ...enhance(nk_east_25_26, 'NK East', 'CBSE', '2025-26'),
+  ...enhance(nk_west_23_24, 'NK West', 'CBSE', '2023-24'),
+  ...enhance(nk_west_24_25, 'NK West', 'CBSE', '2024-25'),
+  ...enhance(nk_west_25_26, 'NK West', 'CBSE', '2025-26'),
 ];
 
 export const allBoards = {

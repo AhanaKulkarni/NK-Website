@@ -233,46 +233,7 @@ export default function Home() {
           </ScrollReveal>
           
           <ScrollReveal delay={0.2}>
-            <div className={styles.extremeToppers}>
-              {/* Highlight Topper */}
-              <div className={styles.highlightTopper}>
-                <div className={styles.highlightPhotoWrapper}>
-                  <Image src="/students/anay-sharma.jpg" alt="Anay Sharma" width={200} height={200} className={styles.highlightPhoto} unoptimized />
-                  <div className={styles.highlightTrophy}>🏆 Top Scorer</div>
-                </div>
-                <div className={styles.highlightInfo}>
-                  <div className={styles.highlightName}>Anay Sharma</div>
-                  <div className={styles.highlightScore}>98.4%</div>
-                  <div className={styles.highlightSchool}>Ryan International</div>
-                </div>
-              </div>
-
-              {/* 4 Runner Up Toppers */}
-              <div className={styles.runnerUpGrid}>
-                {[
-                  { name: 'Aryan Goswami', score: '97.6%', school: "Gopal's Garden", id: 'aaryan-goswami' },
-                  { name: 'Prasiddhi Senghani', score: '97.6%', school: 'SSRVM', id: 'prasiddhi-singhani' },
-                  { name: 'Ditsa Mistry', score: '97.4%', school: 'SSRVM', id: 'ditsa-mistry' },
-                  { name: 'Tithi Patel', score: '97.2%', school: 'SSRVM', id: 'tithi-sanjay-patel' }
-                ].map((topper, i) => (
-                  <div key={i} className={styles.runnerUpCard}>
-                    <div className={styles.runnerUpPhotoWrapper}>
-                      <Image 
-                        src={`/students/${topper.id}.jpg`} 
-                        alt={topper.name}
-                        fill
-                        className={styles.runnerUpPhoto}
-                      />
-                    </div>
-                    <div className={styles.runnerUpInfo}>
-                      <div className={styles.runnerUpName}>{topper.name}</div>
-                      <div className={styles.runnerUpScore}>{topper.score}</div>
-                      <div className={styles.highlightSchool} style={{ fontSize: '0.85rem' }}>{topper.school}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ResultsBoard />
           </ScrollReveal>
         </div>
       </section>
