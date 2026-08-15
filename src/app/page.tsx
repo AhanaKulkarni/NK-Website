@@ -1,65 +1,281 @@
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+import { ChevronRight, MessageCircle, MapPin, Users, BookOpen, TrendingUp, HelpCircle, Monitor } from 'lucide-react';
+import { ResultsBoard } from '@/components/sections/ResultsBoard';
+import { ResultsGraphic } from '@/components/sections/ResultsGraphic';
+import { CountingNumber } from '@/components/ui/CountingNumber';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={styles.page}>
+      {/* 1. Hero Section */}
+      <section className={styles.heroSection}>
+        <ScrollReveal className={`container ${styles.heroContainer}`}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroBadge}>
+              <span className={styles.starIcon}>★</span> Borivali's most trusted coaching - Since 2019
+            </div>
+            <h1 className={styles.heroTitle}>
+              Your child's<br />success starts <span className={styles.heroItalic}>here.</span>
+            </h1>
+            <p className={styles.heroSubtitle}>
+              500+ students. SSC <strong>98%</strong> & CBSE <strong>94%</strong> pass rates. Real teachers, small batches, and Borivali's strongest Sanskrit program.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/demo">
+                <Button variant="secondary" size="large" style={{ borderRadius: '50px', padding: '1rem 2rem', fontWeight: 600 }}>
+                  Book Free Demo Class <ChevronRight size={18} />
+                </Button>
+              </Link>
+              <Link href="/results">
+                <Button variant="outline" size="large" style={{ borderRadius: '50px', padding: '1rem 2rem', fontWeight: 600, borderColor: 'rgba(0,0,0,0.1)', color: 'var(--color-primary)' }}>
+                  See this year's results
+                </Button>
+              </Link>
+            </div>
+            <div className={styles.heroWhatsapp}>
+              <MessageCircle size={16} className={styles.whatsappIconSmall} /> Or WhatsApp us now — we reply within hours
+            </div>
+          </div>
+          
+          <div className={styles.heroImageWrapper}>
+            <div className={styles.heroImageInner}>
+               <Image src="/hero_students.jpg" alt="Students studying" fill className={styles.heroImage} priority />
+               <div className={styles.googleBadge}>
+                 <span className={styles.verifiedIcon}>✓</span> 4.9★ Google Rating
+               </div>
+               <div className={styles.topperFloatingCard}>
+                 <div className={styles.topperFloatingAvatar}>M</div>
+                 <div>
+                   <div className={styles.topperFloatingScore}>100/100</div>
+                   <div className={styles.topperFloatingName}>Manasvi Patankar - Sanskrit</div>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* --- STATS SECTION --- */}
+      <section className={styles.statsSection}>
+        <ScrollReveal className={`container ${styles.statsGrid}`}>
+          <div className={styles.statCard}>
+            <h3 className={styles.statNumber}><CountingNumber value={6} suffix="+" /></h3>
+            <p className={styles.statLabel}>Years of Excellence</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3 className={styles.statNumber}><CountingNumber value={500} suffix="+" /></h3>
+            <p className={styles.statLabel}>Students Mentored</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3 className={styles.statNumber}><CountingNumber value={100} suffix="%" /></h3>
+            <p className={styles.statLabel}>Passing Rate</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3 className={styles.statNumber}><CountingNumber value={25} suffix="+" /></h3>
+            <p className={styles.statLabel}>Expert Faculty</p>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* --- RESULTS GRAPHIC SECTION --- */}
+      <ResultsGraphic />
+
+      {/* --- PROGRAMS SECTION --- */}
+      <section className={styles.programsSection}>
+        <div className={`container`}>
+          <div className={styles.sectionHeaderRow}>
+            <ScrollReveal className={styles.sectionHeaderLeft}>
+              <span className={styles.sectionEyebrow}>PROGRAMS</span>
+              <h2>One academy, every board & stream</h2>
+              <p>From Std 5 to Std 12 — pick a programme built around your child's board, pace and goals.</p>
+            </ScrollReveal>
+            <Link href="/programs" className={styles.viewAllLink}>
+              View all programs <ChevronRight size={16} />
+            </Link>
+          </div>
+          
+          <div className={styles.programsGrid}>
+            {[
+              { num: '01', title: 'SSC', desc: 'Maharashtra State Board mastery', tag: '98%', id: 'ssc', delay: 0.1 },
+              { num: '02', title: 'CBSE', desc: 'Application-driven CBSE preparation', tag: '94%', id: 'cbse', delay: 0.15 },
+              { num: '03', title: 'ICSE', desc: 'Depth-focused ICSE coaching', tag: '95%', id: 'icse', delay: 0.2 },
+              { num: '04', title: 'Science (11-12)', desc: 'PCM / PCB for Std 11 & 12', tag: '96%', id: 'science', delay: 0.25 },
+              { num: '05', title: 'Commerce (11-12)', desc: 'Accounts, Economics & more', tag: '97%', id: 'commerce', delay: 0.3 },
+              { num: '06', title: 'NEET', desc: 'Medical entrance foundation', tag: 'TOP 5%', id: 'neet', delay: 0.35 },
+              { num: '07', title: 'JEE / MHT-CET', desc: 'Engineering entrance edge', tag: 'TOP 5%', id: 'jee', delay: 0.4 },
+            ].map((prog) => (
+              <ScrollReveal key={prog.id} delay={prog.delay} className={styles.programCard}>
+                <div className={styles.programCardTop}>
+                  <span className={styles.programNum}>{prog.num}</span>
+                  <span className={styles.programTag}>{prog.tag}</span>
+                </div>
+                <div>
+                  <h3>{prog.title}</h3>
+                  <p>{prog.desc}</p>
+                  <Link href={`/programs/${prog.id}`} className={styles.learnMoreLink}>
+                    Learn more <ChevronRight size={14} />
+                  </Link>
+                </div>
+              </ScrollReveal>
+            ))}
+            
+            {/* Sanskrit Card */}
+            <ScrollReveal delay={0.45} className={styles.programCard}>
+                <div className={styles.programCardTop}>
+                  <span className={styles.programNum}>08</span>
+                  <span className={styles.programTag}>90%+</span>
+                </div>
+                <div>
+                  <h3>Sanskrit</h3>
+                  <p>Borivali's strongest Sanskrit program</p>
+                  <Link href="/programs/sanskrit" className={styles.learnMoreLink}>
+                    Learn more <ChevronRight size={14} />
+                  </Link>
+                </div>
+            </ScrollReveal>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* --- WHY US SECTION --- */}
+      <section className={styles.whySection}>
+        <div className={`container`}>
+          <ScrollReveal className={styles.whyHeader}>
+            <span className={styles.whyEyebrow}>WHY NK ACADEMY</span>
+            <h2>Reasons Parents trust us</h2>
+          </ScrollReveal>
+          
+          <div className={styles.whyGrid}>
+            <ScrollReveal delay={0.1} className={styles.whyCard}>
+              <div className={styles.whyCardTop}>
+                <span className={styles.whyNum}>01</span>
+                <TrendingUp size={24} className={styles.whyIcon} />
+              </div>
+              <h3>Results parents can verify</h3>
+              <p>SSC 98% and CBSE 94% pass rates with named toppers you can meet — not vague claims.</p>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.2} className={styles.whyCard}>
+              <div className={styles.whyCardTop}>
+                <span className={styles.whyNum}>02</span>
+                <Users size={24} className={styles.whyIcon} />
+              </div>
+              <h3>Small batches, real attention</h3>
+              <p>Capped batch sizes so every student is known by name and tracked test-by-test.</p>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.3} className={styles.whyCard}>
+              <div className={styles.whyCardTop}>
+                <span className={styles.whyNum}>03</span>
+                <BookOpen size={24} className={styles.whyIcon} />
+              </div>
+              <h3>The Sanskrit advantage</h3>
+              <p>NK Sir's Sanskrit method turns a feared subject into a reliable 90%+ scorer.</p>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.4} className={styles.whyCard}>
+              <div className={styles.whyCardTop}>
+                <span className={styles.whyNum}>04</span>
+                <MapPin size={24} className={styles.whyIcon} />
+              </div>
+              <h3>Two Borivali branches</h3>
+              <p>Established centres in Borivali East and West — close to home, easy to reach.</p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.5} className={styles.whyCard}>
+              <div className={styles.whyCardTop}>
+                <span className={styles.whyNum}>05</span>
+                <HelpCircle size={24} className={styles.whyIcon} />
+              </div>
+              <h3>Instant doubt resolution</h3>
+              <p>Dedicated doubt-solving sessions and 24/7 faculty support to ensure no conceptual gaps.</p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.6} className={styles.whyCard}>
+              <div className={styles.whyCardTop}>
+                <span className={styles.whyNum}>06</span>
+                <Monitor size={24} className={styles.whyIcon} />
+              </div>
+              <h3>Tech-enabled learning</h3>
+              <p>Access our premium digital resources, recorded lectures, and app for continuous revision.</p>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.7} className={styles.whyCTAContainer}>
+            <div className={styles.whyCTABox}>
+              <h3>Ready to give your child the NK Academy advantage?</h3>
+              <p>Join Borivali's most trusted coaching institute today and secure their academic future.</p>
+              <Link href="/contact" className={styles.whyCTABtn}>
+                Book a Free Counseling Session
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
-      </main>
+      </section>
+
+      {/* --- RESULTS SECTION --- */}
+      <section className={styles.resultsSection}>
+        <div className={`container`}>
+          <ScrollReveal className={styles.sectionHeaderRow}>
+            <div className={styles.sectionHeaderLeft}>
+              <span className={styles.sectionEyebrowDark}>RESULTS</span>
+              <h2>Toppers you can actually name</h2>
+              <p>Filter by year and board. These are our students — real names, real scores.</p>
+            </div>
+            <Link href="/results" className={styles.viewAllLink}>
+              Full results dashboard <ChevronRight size={16} />
+            </Link>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={0.2}>
+            <div className={styles.extremeToppers}>
+              {/* Highlight Topper */}
+              <div className={styles.highlightTopper}>
+                <div className={styles.highlightPhotoWrapper}>
+                  <Image src="/students/anay-sharma.jpg" alt="Anay Sharma" width={200} height={200} className={styles.highlightPhoto} unoptimized />
+                  <div className={styles.highlightTrophy}>🏆 Top Scorer</div>
+                </div>
+                <div className={styles.highlightInfo}>
+                  <div className={styles.highlightName}>Anay Sharma</div>
+                  <div className={styles.highlightScore}>98.4%</div>
+                  <div className={styles.highlightSchool}>Ryan International</div>
+                </div>
+              </div>
+
+              {/* 4 Runner Up Toppers */}
+              <div className={styles.runnerUpGrid}>
+                {[
+                  { name: 'Aryan Goswami', score: '97.6%', school: "Gopal's Garden", id: 'aaryan-goswami' },
+                  { name: 'Prasiddhi Senghani', score: '97.6%', school: 'SSRVM', id: 'prasiddhi-singhani' },
+                  { name: 'Ditsa Mistry', score: '97.4%', school: 'SSRVM', id: 'ditsa-mistry' },
+                  { name: 'Tithi Patel', score: '97.2%', school: 'SSRVM', id: 'tithi-sanjay-patel' }
+                ].map((topper, i) => (
+                  <div key={i} className={styles.runnerUpCard}>
+                    <div className={styles.runnerUpPhotoWrapper}>
+                      <Image 
+                        src={`/students/${topper.id}.jpg`} 
+                        alt={topper.name}
+                        fill
+                        className={styles.runnerUpPhoto}
+                      />
+                    </div>
+                    <div className={styles.runnerUpInfo}>
+                      <div className={styles.runnerUpName}>{topper.name}</div>
+                      <div className={styles.runnerUpScore}>{topper.score}</div>
+                      <div className={styles.highlightSchool} style={{ fontSize: '0.85rem' }}>{topper.school}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </div>
   );
 }

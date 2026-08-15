@@ -1,0 +1,178 @@
+.section {
+  padding: 4rem 0 6rem;
+  background-color: #FAFAFA;
+}
+
+.graphicContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: white;
+  border-radius: 32px;
+  padding: 4rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.graphicText h2 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.graphicText > p {
+  font-size: 1.1rem;
+  color: var(--color-supporting);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.iconBox {
+  background: #f0f4f8;
+  color: var(--color-primary);
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlightItem h4 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.highlightItem p {
+  font-size: 0.95rem;
+  color: var(--color-supporting);
+}
+
+.graphicVisual {
+  position: relative;
+  background: linear-gradient(135deg, #eef2f6 0%, #f0f4f8 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.visualCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.visualCard h3 {
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.barChart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.barItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.barLabel {
+  font-weight: 600;
+  color: var(--color-supporting);
+  width: 40px;
+}
+
+.barTrack {
+  flex: 1;
+  height: 12px;
+  background: #eef2f6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: 10px;
+}
+
+.barValue {
+  font-weight: 700;
+  color: var(--color-primary);
+  width: 40px;
+  text-align: right;
+}
+
+.floatingBadge {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  background: var(--color-primary);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 15px 30px rgba(26, 42, 71, 0.2);
+}
+
+.badgeNumber {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.badgeText {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 992px) {
+  .graphicContainer {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  
+  .floatingBadge {
+    bottom: -1rem;
+    right: 1rem;
+  }
+}
