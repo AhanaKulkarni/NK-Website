@@ -91,7 +91,7 @@ export default function Home() {
       <ResultsGraphic />
 
       {/* --- PROGRAMS SECTION --- */}
-      <section className={styles.programsSection}>
+      <section id="programs" className={styles.programsSection}>
         <div className={`container`}>
           <div className={styles.sectionHeaderRow}>
             <ScrollReveal className={styles.sectionHeaderLeft}>
