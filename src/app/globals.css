@@ -1,25 +1,27 @@
 :root {
   /* Brand Color System */
-  --color-primary: #102B5E; /* Brand Navy */
-  --color-accent: #E53935; /* Clean vibrant red */
-  --color-background: #FFFFFF; /* Pure White BG as requested */
-  --color-surface: #FFFFFF;
-  --color-supporting: #475569; /* Muted slate */
-  --color-text-main: #0F172A; /* Slate 900 */
-  --color-white: #FFFFFF;
+  --color-primary: #102B5E; /* NK Navy */
+  --color-accent: #E53935; /* NK Red */
+  --color-background: #FFFFFF; /* Pure White */
+  --color-surface: #F8FAFC; /* Extremely light cool gray */
+  --color-text: #0F172A; /* Slate 900 */
+  --color-supporting: #475569; /* Slate 600 */
+  --color-border: rgba(16, 43, 94, 0.08);
 
-  /* Shadows - Updated to match new brand colors */
+  /* Typography System */
+  --font-display: var(--font-display), 'Syne', sans-serif;
+  --font-body: var(--font-body), 'Inter', sans-serif;
+
+  /* Motion & Spacing */
+  --transition-spring: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.3s ease;
+  
+  /* Shadows */
   --shadow-diffuse: 0 10px 30px -10px rgba(16, 43, 94, 0.08), 0 1px 3px rgba(16, 43, 94, 0.03);
-  --shadow-hover-lift: 0 20px 40px -12px rgba(16, 43, 94, 0.12), 0 4px 12px rgba(16, 43, 94, 0.06);
-  --shadow-glow: 0 0 40px rgba(211, 28, 45, 0.15);
+  --shadow-hover: 0 20px 40px -10px rgba(16, 43, 94, 0.12);
   
   /* Radii */
   --radius-card: 24px;
-  --radius-button: 12px;
-
-  /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
 /* Reset and Base Styles */
@@ -29,14 +31,16 @@
   padding: 0;
 }
 
-html,
-body {
+html, body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
   background-color: var(--color-background);
-  color: var(--color-text-main);
-  font-family: var(--font-sans);
-  line-height: 1.7;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,42 +50,25 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  color: var(--color-primary);
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6, .display-font {
+  font-family: var(--font-display);
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  color: var(--color-primary);
 }
 
-h1 {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+.eyebrow {
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  display: block;
 }
 
-h2 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-h3 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-button {
-  cursor: pointer;
-  font-family: var(--font-sans);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Utilities */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -89,27 +76,16 @@ img {
   padding: 0 2rem;
 }
 
-.section {
-  padding: 8rem 0; /* Increased breathing room */
-}
-
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
   }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+/* Base interactive */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
-
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }

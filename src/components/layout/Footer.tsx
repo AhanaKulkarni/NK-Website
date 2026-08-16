@@ -7,63 +7,52 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContainer}`}>
-        <div className={styles.grid}>
-          {/* Brand & About */}
-          <div className={styles.column}>
-            <h3 className={styles.logo}>NK Academy</h3>
-            <p className={styles.description}>
-              The benchmark digital education platform in Borivali. Empowering students with premium coaching for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE, and Sanskrit.
-            </p>
+        <div className={styles.topSection}>
+          <div className={styles.brandCol}>
+            <div className={styles.logoGroup}>
+              <img src="/logo.png" alt="NK Academy" className={styles.logoImage} />
+            </div>
+            <p className={styles.tagline}>The direction of success.</p>
+            <div className={styles.socials}>
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="YouTube">YouTube</a>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div className={styles.column}>
-            <h4 className={styles.heading}>Quick Links</h4>
-            <ul className={styles.list}>
-              <li><Link href="/about">About NK Sir</Link></li>
-              <li><Link href="/programs">Our Programs</Link></li>
-              <li><Link href="/results">Past Results</Link></li>
-              <li><Link href="/resources">Study Materials</Link></li>
-              <li><Link href="/contact">Contact Us</Link></li>
-            </ul>
+          <div className={styles.linksCol}>
+            <h4 className={styles.heading}>Navigation</h4>
+            <nav className={styles.navLinks}>
+              <Link href="/">Home</Link>
+              <Link href="/about">About NK</Link>
+              <Link href="/programs">Programs</Link>
+              <Link href="/results">Results</Link>
+              <Link href="/faculty">Faculty</Link>
+            </nav>
           </div>
 
-          {/* Programs */}
-          <div className={styles.column}>
-            <h4 className={styles.heading}>Programs</h4>
-            <ul className={styles.list}>
-              <li><Link href="/programs/ssc">SSC Board</Link></li>
-              <li><Link href="/programs/cbse">CBSE Board</Link></li>
-              <li><Link href="/programs/icse">ICSE Board</Link></li>
-              <li><Link href="/programs/science">Science (XI & XII)</Link></li>
-              <li><Link href="/programs/commerce">Commerce (XI & XII)</Link></li>
-              <li><Link href="/programs/sanskrit">Sanskrit Toolkit</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className={styles.column}>
+          <div className={styles.contactCol}>
             <h4 className={styles.heading}>Contact</h4>
-            <ul className={styles.contactList}>
-              <li>
-                <MapPin size={18} />
-                <span>Borivali East & West Branches</span>
-              </li>
-              <li>
-                <Phone size={18} />
-                <span>+91 90000 00000</span>
-              </li>
-              <li>
-                <Mail size={18} />
-                <span>info@nkacademy.com</span>
-              </li>
-            </ul>
+            <div className={styles.contactItems}>
+              <div className={styles.contactItem}>
+                <MapPin size={18} className={styles.icon} />
+                <p>Borivali East & West<br />Mumbai, Maharashtra</p>
+              </div>
+              <div className={styles.contactItem}>
+                <Phone size={18} className={styles.icon} />
+                <p>+91 90000 00000</p>
+              </div>
+              <div className={styles.contactItem}>
+                <Mail size={18} className={styles.icon} />
+                <p>info@nkacademy.in</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className={styles.bottom}>
-          <p>&copy; {new Date().getFullYear()} NK Academy. All rights reserved.</p>
-          <div className={styles.legal}>
+        <div className={styles.bottomSection}>
+          <p className={styles.copyright}>&copy; {new Date().getFullYear()} NK Academy. All rights reserved.</p>
+          <div className={styles.legalLinks}>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>
           </div>

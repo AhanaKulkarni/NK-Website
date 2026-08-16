@@ -1,0 +1,438 @@
+.page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* SECTION 01: HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  background-color: var(--color-background);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heroTitle {
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-supporting);
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btnPrimary {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-button);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all var(--transition-smooth);
+}
+
+.btnPrimary:hover {
+  background-color: #D32F2F;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(229, 57, 53, 0.2);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-button);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-smooth);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.heroRight {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SECTION 02: THE PROMISE */
+.promise {
+  padding: 8rem 0;
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+}
+
+.promiseTitle {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  color: white;
+}
+
+.promiseText {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* SECTION 03: PROGRAMS */
+.programs {
+  padding: 8rem 0;
+  background-color: var(--color-background);
+}
+
+.programsHeader {
+  margin-bottom: 4rem;
+}
+
+.programsList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.programItem {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.programItem:hover {
+  padding-left: 2rem;
+  background-color: var(--color-surface);
+}
+
+.programNum {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.programName {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+}
+
+.programDesc {
+  color: var(--color-supporting);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.programIcon {
+  color: var(--color-primary);
+  transition: transform var(--transition-smooth);
+}
+
+.programItem:hover .programIcon {
+  transform: translateX(10px);
+  color: var(--color-accent);
+}
+
+/* SECTION 04: WHY NK */
+.why {
+  padding: 8rem 0;
+  background-color: var(--color-surface);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.whyCard {
+  background: white;
+  padding: 3rem;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-diffuse);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-smooth);
+}
+
+.whyCard:hover {
+  transform: translateY(-5px);
+}
+
+.whyCardNum {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: rgba(16, 43, 94, 0.1);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.whyCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* SECTION 05: RESULTS */
+.results {
+  padding: 10rem 0;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.resultNumber {
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-family: var(--font-display);
+  color: white;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.resultLabel {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* SECTION 06: TESTIMONIALS */
+.testimonials {
+  padding: 8rem 0;
+  background-color: var(--color-background);
+}
+
+.testimonialCard {
+  max-width: 800px;
+  margin: 4rem auto 0;
+  text-align: center;
+}
+
+.testimonialQuote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 3rem;
+}
+
+.testimonialAuthor {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.testimonialDetail {
+  font-size: 0.95rem;
+  color: var(--color-supporting);
+}
+
+/* SECTION 07: FACULTY */
+.faculty {
+  padding: 8rem 0;
+  background-color: var(--color-surface);
+}
+
+.facultyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.facultyCard {
+  background: white;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-diffuse);
+}
+
+.facultyImage {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: #E2E8F0; /* Placeholder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-supporting);
+}
+
+.facultyInfo {
+  padding: 2rem;
+}
+
+.facultyName {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.facultyRole {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* SECTION 08: THE JOURNEY */
+.journey {
+  padding: 10rem 0;
+  background-color: var(--color-background);
+}
+
+.journeyLine {
+  position: relative;
+  max-width: 800px;
+  margin: 6rem auto 0;
+  border-left: 2px solid var(--color-border);
+  padding-left: 4rem;
+}
+
+.journeyStep {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.journeyStep::before {
+  content: '';
+  position: absolute;
+  left: -4rem;
+  top: 0.5rem;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-background);
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  transform: translateX(-11px);
+}
+
+.journeyStep:hover::before {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.journeyNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+/* SECTION 09: CTA */
+.cta {
+  padding: 12rem 0;
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaTitle {
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: white;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .heroLeft {
+    align-items: center;
+  }
+  .heroRight {
+    height: 400px;
+  }
+  .whyGrid, .resultsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .facultyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .programItem {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 0;
+  }
+  .programNum {
+    margin-bottom: 0.5rem;
+  }
+  .programIcon {
+    display: none;
+  }
+  .facultyGrid {
+    grid-template-columns: 1fr;
+  }
+  .journeyLine {
+    padding-left: 2rem;
+  }
+  .journeyStep::before {
+    left: -2rem;
+  }
+  .ctaActions {
+    flex-direction: column;
+  }
+}

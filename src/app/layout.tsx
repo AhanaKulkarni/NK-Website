@@ -3,11 +3,24 @@ import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 
+const displayFont = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const bodyFont = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "NK Academy | Best Coaching Classes in Borivali | SSC CBSE ICSE NEET JEE",
-  description: "Your child's best result starts here. 500+ students. Borivali's most trusted coaching since 2019. Expert coaching for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE.",
+  title: "NK Academy | The Direction of Success",
+  description: "Borivali's most trusted coaching institute for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE and Sanskrit.",
 };
 
 export default function RootLayout({
@@ -16,11 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
         <SchemaMarkup />
       </head>
       <body>
