@@ -62,8 +62,7 @@ export default function Home() {
             >
               Find Your<br />
               <span className={styles.heroAccent}>Direction.</span><br />
-              Build Your<br />
-              Future.
+              <span style={{ color: '#800020' }}>Build Your<br />Future.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -105,10 +104,16 @@ export default function Home() {
               {/* Main Compass Area */}
               <motion.div style={{ rotate: compassRotate }}>
                 <motion.div 
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  initial={{ rotate: -1440, scale: 0.5, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
                   whileHover={{ scale: 1.15, rotate: 45 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  transition={{ 
+                    duration: 2.5, 
+                    type: "spring", 
+                    damping: 12, 
+                    stiffness: 40,
+                    opacity: { duration: 0.8 } 
+                  }}
                   style={{ cursor: 'pointer', zIndex: 10, position: 'relative' }}
                 >
                   {/* Abstract Compass SVG */}
