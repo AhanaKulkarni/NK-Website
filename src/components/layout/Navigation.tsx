@@ -51,9 +51,9 @@ export function Navigation() {
         </nav>
 
         <div className={styles.actions}>
-          <Link href="/contact" className={styles.ctaButton}>
+          <a href="#enquiry" className={styles.ctaButton}>
             ENQUIRE NOW
-          </Link>
+          </a>
           
           <button 
             className={styles.hamburger} 

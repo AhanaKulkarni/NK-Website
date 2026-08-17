@@ -79,12 +79,12 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className={styles.heroActions}
             >
-              <Link href="/contact" className={styles.btnPrimary}>
+              <a href="#enquiry" className={styles.btnPrimary}>
                 START YOUR JOURNEY <ArrowRight size={18} />
-              </Link>
-              <Link href="/programs" className={styles.btnSecondary}>
+              </a>
+              <a href="#programs" className={styles.btnSecondary}>
                 Explore Programs
-              </Link>
+              </a>
             </motion.div>
           </div>
           
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 03: PROGRAMS */}
-      <section className={styles.programs}>
+      <section id="programs" className={styles.programs}>
         <div className="container">
           <Reveal className={styles.programsHeader}>
             <span className={styles.eyebrow}>Our Programs</span>
@@ -165,15 +165,15 @@ export default function Home() {
           
           <div className={styles.programsList}>
             {[
-              { num: '01', title: 'SSC Board', desc: 'Maharashtra State Board mastery' },
-              { num: '02', title: 'CBSE Board', desc: 'Application-driven CBSE preparation' },
-              { num: '03', title: 'ICSE Board', desc: 'Depth-focused ICSE coaching' },
-              { num: '04', title: 'Science', desc: 'PCM / PCB for Std 11 & 12' },
-              { num: '05', title: 'Commerce', desc: 'Accounts, Economics & more' },
-              { num: '06', title: 'Sanskrit', desc: "Borivali's strongest Sanskrit program" },
+              { num: '01', title: 'SSC Board', desc: 'Maharashtra State Board mastery', path: '/programs/ssc' },
+              { num: '02', title: 'CBSE Board', desc: 'Application-driven CBSE preparation', path: '/programs/cbse' },
+              { num: '03', title: 'ICSE Board', desc: 'Depth-focused ICSE coaching', path: '/programs/icse' },
+              { num: '04', title: 'Science', desc: 'PCM / PCB for Std 11 & 12', path: '/programs/science' },
+              { num: '05', title: 'Commerce', desc: 'Accounts, Economics & more', path: '/programs/commerce' },
+              { num: '06', title: 'Sanskrit', desc: "Borivali's strongest Sanskrit program", path: '/programs/sanskrit' },
             ].map((prog, i) => (
               <Reveal key={prog.num} delay={i * 0.1}>
-                <Link href="/programs" className={styles.programItem}>
+                <Link href={prog.path} className={styles.programItem}>
                   <span className={styles.programNum}>{prog.num}</span>
                   <div>
                     <h3 className={styles.programName}>{prog.title}</h3>

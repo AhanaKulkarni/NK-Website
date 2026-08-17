@@ -18,6 +18,8 @@ const bodyFont = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+import { EnquirySection } from "@/components/shared/EnquirySection";
+
 export const metadata: Metadata = {
   title: "NK Academy | The Direction of Success",
   description: "Borivali's most trusted coaching institute for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE and Sanskrit.",
@@ -36,6 +38,7 @@ export default function RootLayout({
       <body>
         <Navigation />
         <main>{children}</main>
+        <EnquirySection />
         <Footer />
         <WhatsAppButton />
       </body>
