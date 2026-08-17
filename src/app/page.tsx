@@ -20,6 +20,22 @@ const Reveal = ({ children, delay = 0, className = "" }: any) => {
   );
 };
 
+const topStudents = [
+  'Saanvi Prabhu', 'Aditya Khatavkar', 'Araya Dewoolkar', 'Hrishant Dave', 
+  'Indira Parmar', 'Gaurang Mourya', 'Arya Trivedi', 'Vaidehi Shewale', 
+  'Manasvi Patankar', 'Aniket Kadam', 'Ananya Dalvi', 'Soumil Save', 
+  'Aarav Darji', 'Heet Sondagar', 'Shreyas Ghadi', 'Ishan Hindalekar', 
+  'Akshara Bhosale', 'Aayushi Dike', 'Sanika Rane', 'Ayush Jagtap', 
+  'Daksh Wangde', 'Jiya Modi', 'Shwet Pange', 'Shrey Thakoor', 
+  'Ahan Shetty', 'Tithi Sanjay Patel', 'Ansh Kumar', 'Janhavi Pawar', 
+  'Yash Vedak', 'Rashi Agrawal', 'Ishani Bharti', 'Aaryan Rathod', 
+  'Hetvi Pandya', 'Shubham Wagle', 'Vivaan Shetty', 'Shreya Gupta', 
+  'Sharvil Gundewar'
+];
+
+// Duplicate for continuous marquee effect
+const marqueeStudents = [...topStudents, ...topStudents];
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const compassRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
@@ -63,22 +79,25 @@ export default function Home() {
           </div>
           
           <div className={styles.heroRight}>
-            <motion.div 
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              style={{ rotate: compassRotate }}
-            >
-              {/* Abstract Compass SVG */}
-              <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="200" cy="200" r="190" stroke="rgba(16, 43, 94, 0.05)" strokeWidth="2" strokeDasharray="10 10"/>
-                <circle cx="200" cy="200" r="150" stroke="rgba(16, 43, 94, 0.1)" strokeWidth="1"/>
-                <circle cx="200" cy="200" r="100" stroke="var(--color-primary)" strokeWidth="2"/>
-                <path d="M200 40 L220 180 L200 200 Z" fill="var(--color-accent)"/>
-                <path d="M200 40 L180 180 L200 200 Z" fill="#B71C1C"/>
-                <path d="M200 360 L220 220 L200 200 Z" fill="var(--color-primary)"/>
-                <path d="M200 360 L180 220 L200 200 Z" fill="#0A1A3A"/>
-              </svg>
+            <motion.div style={{ rotate: compassRotate }}>
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                whileHover={{ scale: 1.05, rotate: 15 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                style={{ cursor: 'pointer' }}
+              >
+                {/* Abstract Compass SVG */}
+                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="200" cy="200" r="190" stroke="rgba(16, 43, 94, 0.05)" strokeWidth="2" strokeDasharray="10 10"/>
+                  <circle cx="200" cy="200" r="150" stroke="rgba(16, 43, 94, 0.1)" strokeWidth="1"/>
+                  <circle cx="200" cy="200" r="100" stroke="var(--color-primary)" strokeWidth="2"/>
+                  <path d="M200 40 L220 180 L200 200 Z" fill="var(--color-accent)"/>
+                  <path d="M200 40 L180 180 L200 200 Z" fill="#B71C1C"/>
+                  <path d="M200 360 L220 220 L200 200 Z" fill="var(--color-primary)"/>
+                  <path d="M200 360 L180 220 L200 200 Z" fill="#0A1A3A"/>
+                </svg>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -177,6 +196,25 @@ export default function Home() {
               <div className={styles.resultLabel}>CBSE Pass Rate</div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* SECTION 05.5: STUDENT MARQUEE */}
+      <section className={styles.marqueeSection}>
+        <div className={styles.marqueeContainer}>
+          {marqueeStudents.map((name, index) => {
+            const photoId = name.toLowerCase().replace(/ /g, '-').replace('rashi-agrawal', 'rashi-agrwal');
+            return (
+              <div key={`${name}-${index}`} className={styles.studentCard}>
+                <div className={styles.studentPhotoWrapper}>
+                  <img src={`/students/${photoId}.jpg`} alt={name} className={styles.studentPhoto} loading="lazy" />
+                </div>
+                <div className={styles.studentInfo}>
+                  <div className={styles.studentName}>{name}</div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

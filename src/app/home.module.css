@@ -245,6 +245,74 @@
   font-weight: 700;
 }
 
+/* SECTION 05.5: STUDENT MARQUEE */
+.marqueeSection {
+  background-color: var(--color-background);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.marqueeContainer {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.marqueeContainer:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.studentCard {
+  width: 250px;
+  flex-shrink: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-diffuse);
+  background: white;
+  transition: transform var(--transition-smooth);
+}
+
+.studentCard:hover {
+  transform: translateY(-10px);
+}
+
+.studentPhotoWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.studentPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.studentInfo {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.studentName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
 /* SECTION 06: TESTIMONIALS */
 .testimonials {
   padding: 8rem 0;

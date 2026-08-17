@@ -27,7 +27,7 @@ export function Footer() {
               <Link href="/about">About NK</Link>
               <Link href="/programs">Programs</Link>
               <Link href="/results">Results</Link>
-              <Link href="/faculty">Faculty</Link>
+              <Link href="/events/nk-apl-2023">NK APL 2023</Link>
             </nav>
           </div>
 
@@ -40,7 +40,11 @@ export function Footer() {
               </div>
               <div className={styles.contactItem}>
                 <Phone size={18} className={styles.icon} />
-                <p>+91 90000 00000</p>
+                <div>
+                  <p><strong>NK Sir:</strong> +91 88795 11601</p>
+                  <p><strong>East Branch (Pawan Sir):</strong> +91 75060 58113</p>
+                  <p><strong>West Branch (Rupa Ma'am):</strong> +91 90829 48098</p>
+                </div>
               </div>
               <div className={styles.contactItem}>
                 <Mail size={18} className={styles.icon} />
