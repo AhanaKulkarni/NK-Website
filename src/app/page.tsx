@@ -2,7 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, MoveRight } from 'lucide-react';
+import { ArrowRight, MoveRight, Trophy, BookOpen } from 'lucide-react';
+import { ToppersCarousel } from '@/components/home/ToppersCarousel';
 import styles from './home.module.css';
 
 // Reusable scroll reveal component
@@ -38,22 +39,31 @@ const marqueeStudents = [...topStudents, ...topStudents];
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  const compassRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const compassRotate = useTransform(scrollYProgress, [0, 1], [0, 360]); // Increased rotation
 
   return (
     <div className={styles.page}>
       
       {/* SECTION 01: HERO */}
       <section className={styles.hero}>
+        <div className={styles.heroBackgroundBlob}></div>
+        <div className={styles.heroWatermark}>SUCCESS</div>
+        
         <div className={`container ${styles.heroGrid}`}>
           <div className={styles.heroLeft}>
+            <Reveal>
+              <span className={styles.eyebrow} style={{ marginBottom: '1rem', display: 'inline-block' }}>Established Excellence</span>
+            </Reveal>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className={styles.heroTitle}
             >
-              Find Your<br />Direction.<br />Build Your<br />Future.
+              Find Your<br />
+              <span className={styles.heroAccent}>Direction.</span><br />
+              Build Your<br />
+              Future.
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -79,26 +89,53 @@ export default function Home() {
           </div>
           
           <div className={styles.heroRight}>
-            <motion.div style={{ rotate: compassRotate }}>
-              <motion.div 
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                whileHover={{ scale: 1.05, rotate: 15 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                style={{ cursor: 'pointer' }}
-              >
-                {/* Abstract Compass SVG */}
-                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="200" cy="200" r="190" stroke="rgba(16, 43, 94, 0.05)" strokeWidth="2" strokeDasharray="10 10"/>
-                  <circle cx="200" cy="200" r="150" stroke="rgba(16, 43, 94, 0.1)" strokeWidth="1"/>
-                  <circle cx="200" cy="200" r="100" stroke="var(--color-primary)" strokeWidth="2"/>
-                  <path d="M200 40 L220 180 L200 200 Z" fill="var(--color-accent)"/>
-                  <path d="M200 40 L180 180 L200 200 Z" fill="#B71C1C"/>
-                  <path d="M200 360 L220 220 L200 200 Z" fill="var(--color-primary)"/>
-                  <path d="M200 360 L180 220 L200 200 Z" fill="#0A1A3A"/>
-                </svg>
+            <div className={styles.heroRightContainer}>
+              
+              {/* Floating Card 1 */}
+              <div className={`${styles.floatingCard} ${styles.floatingCard1}`}>
+                <div className={styles.cardIcon}>
+                  <Trophy size={24} />
+                </div>
+                <div className={styles.cardText}>
+                  <h4>98.8%</h4>
+                  <p>Highest Score 2025</p>
+                </div>
+              </div>
+
+              {/* Main Compass Area */}
+              <motion.div style={{ rotate: compassRotate }}>
+                <motion.div 
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  whileHover={{ scale: 1.15, rotate: 45 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  style={{ cursor: 'pointer', zIndex: 10, position: 'relative' }}
+                >
+                  {/* Abstract Compass SVG */}
+                  <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="200" r="190" stroke="rgba(16, 43, 94, 0.05)" strokeWidth="2" strokeDasharray="10 10"/>
+                    <circle cx="200" cy="200" r="150" stroke="rgba(16, 43, 94, 0.1)" strokeWidth="1"/>
+                    <circle cx="200" cy="200" r="100" stroke="var(--color-primary)" strokeWidth="2"/>
+                    <path d="M200 40 L220 180 L200 200 Z" fill="var(--color-accent)"/>
+                    <path d="M200 40 L180 180 L200 200 Z" fill="#B71C1C"/>
+                    <path d="M200 360 L220 220 L200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M200 360 L180 220 L200 200 Z" fill="#0A1A3A"/>
+                  </svg>
+                </motion.div>
               </motion.div>
-            </motion.div>
+
+              {/* Floating Card 2 */}
+              <div className={`${styles.floatingCard} ${styles.floatingCard2}`}>
+                <div className={`${styles.cardIcon} ${styles.cardIconRed}`}>
+                  <BookOpen size={24} />
+                </div>
+                <div className={styles.cardText}>
+                  <h4>4 Boards</h4>
+                  <p>Comprehensive Prep</p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -199,7 +236,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 05.5: STUDENT MARQUEE */}
+      {/* SECTION 05.5: TOPPERS CAROUSEL */}
+      <ToppersCarousel />
+
+      {/* SECTION 05.6: STUDENT MARQUEE */}
       <section className={styles.marqueeSection}>
         <div className={styles.marqueeContainer}>
           {marqueeStudents.map((name, index) => {
