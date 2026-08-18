@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import styles from './Navigation.module.css';
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -21,14 +22,43 @@ export function Navigation() {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setActiveDropdown(null);
   }, [pathname]);
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Programs', href: '/programs' },
-    { label: 'Results', href: '/results' },
-    { label: 'Contact', href: '/contact' },
+    { 
+      label: 'About Us', 
+      href: '/about',
+      dropdown: [
+        { label: 'About Us', href: '/about' },
+        { label: 'Faculties', href: '/about/faculties' },
+        { label: 'Facilities', href: '/about/facilities' },
+        { label: 'Schedule', href: '/about/schedule' },
+        { label: 'NK Academy Events', href: '/events' }
+      ]
+    },
+    { label: 'Success', href: '/results' },
+    {
+      label: 'Classes',
+      href: '/programs',
+      dropdown: [
+        { label: 'Best CBSE Coaching Classes', href: '/programs/cbse' },
+        { label: 'Best ICSE Coaching Classes', href: '/programs/icse' },
+        { label: 'Best SSC Coaching Classes', href: '/programs/ssc' },
+        { label: 'Best NEET Coaching Classes', href: '/programs/neet' },
+        { label: 'Best MHT-CET Coaching Classes', href: '/programs/mht-cet' },
+        { label: 'Best JEE-Main Coaching Classes', href: '/programs/jee' },
+        { label: 'Best Commerce Classes', href: '/programs/commerce' },
+        { label: 'Best JEE-Main Institute', href: '/programs/jee-institute' },
+        { label: 'Premium Coaching Classes', href: '/programs/premium' },
+        { label: 'Best SSC Coaching Classes Borivali West', href: '/programs/ssc-borivali-west' },
+        { label: 'Best ICSE Coaching Classes Borivali West', href: '/programs/icse-borivali-west' },
+        { label: 'Best CBSE Coaching Classes Borivali West', href: '/programs/cbse-borivali-west' },
+      ]
+    },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact Us', href: '/contact' },
   ];
 
   return (
@@ -40,13 +70,34 @@ export function Navigation() {
 
         <nav className={`${styles.desktopNav}`}>
           {navLinks.map((link) => (
-            <Link 
+            <div 
               key={link.href} 
-              href={link.href}
-              className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
+              className={styles.navItem}
+              onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
+              onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
             >
-              {link.label}
-            </Link>
+              <Link 
+                href={link.href}
+                className={`${styles.navLink} ${pathname === link.href || pathname.startsWith(link.href + '/') ? styles.active : ''}`}
+              >
+                {link.label}
+                {link.dropdown && <ChevronDown size={14} className={styles.chevron} />}
+              </Link>
+              
+              {link.dropdown && activeDropdown === link.label && (
+                <div className={styles.dropdownMenu}>
+                  {link.dropdown.map((dropLink) => (
+                    <Link 
+                      key={dropLink.href} 
+                      href={dropLink.href}
+                      className={styles.dropdownItem}
+                    >
+                      {dropLink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -67,18 +118,40 @@ export function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.open : ''}`}>
-        <nav className={styles.mobileNavLinks}>
+        <div className={styles.mobileNavLinks}>
           {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
-              href={link.href}
-              className={styles.mobileNavLink}
-            >
-              {link.label}
-            </Link>
+            <div key={link.href} className={styles.mobileNavItem}>
+              <div 
+                className={styles.mobileNavLinkWrapper}
+                onClick={() => link.dropdown ? setActiveDropdown(activeDropdown === link.label ? null : link.label) : null}
+              >
+                <Link href={link.href} className={styles.mobileNavLink}>
+                  {link.label}
+                </Link>
+                {link.dropdown && (
+                  <button className={styles.mobileDropdownBtn}>
+                    <ChevronDown size={20} className={activeDropdown === link.label ? styles.rotate : ''} />
+                  </button>
+                )}
+              </div>
+              
+              {link.dropdown && activeDropdown === link.label && (
+                <div className={styles.mobileDropdown}>
+                  {link.dropdown.map((dropLink) => (
+                    <Link 
+                      key={dropLink.href} 
+                      href={dropLink.href}
+                      className={styles.mobileDropdownItem}
+                    >
+                      {dropLink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
-        </nav>
-        <Link href="/contact" className={styles.mobileCtaButton}>
+        </div>
+        <Link href="#enquiry" className={styles.mobileCtaButton} onClick={() => setMobileMenuOpen(false)}>
           ENQUIRE NOW
         </Link>
       </div>

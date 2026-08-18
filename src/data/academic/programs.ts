@@ -184,5 +184,83 @@ export const programsData: Record<string, ProgramOverview> = {
       'Extensive writing practice sheets',
       'Guaranteed score improvement plan'
     ]
+  },
+  'mht-cet': {
+    id: 'mht-cet',
+    title: 'MHT-CET Coaching',
+    category: 'Competitive Exams',
+    shortDescription: 'Dedicated MHT-CET coaching for top Maharashtra engineering & pharmacy colleges.',
+    whoItsFor: 'Students targeting COEP, VJTI, and other premier state institutes.',
+    classesCovered: ['Std 11', 'Std 12'],
+    boardsCovered: ['Maharashtra CET Cell'],
+    streamsCovered: ['PCM', 'PCB'],
+    subjects: ['Physics', 'Chemistry', 'Mathematics', 'Biology'],
+    learningApproach: ['Focus on speed and accuracy', 'State board syllabus integration', 'Extensive mock tests'],
+    whatStudentsReceive: ['CET specific modules', 'Past year papers', 'Online CBT practice']
+  },
+  'jee-institute': {
+    id: 'jee-institute',
+    title: 'Best JEE-Main Institute',
+    category: 'Competitive Exams',
+    shortDescription: 'Premier JEE Main preparation institute in Mumbai.',
+    whoItsFor: 'Ambitious students aiming to crack JEE Main with top percentiles.',
+    classesCovered: ['Std 11', 'Std 12', 'Dropper'],
+    boardsCovered: ['NTA'],
+    streamsCovered: ['PCM'],
+    subjects: ['Physics', 'Chemistry', 'Mathematics'],
+    learningApproach: ['Advanced problem solving', 'Concept building', 'Rigorous testing'],
+    whatStudentsReceive: ['Premium study material', 'Doubt resolution', 'Mock exams']
+  },
+  'premium': {
+    id: 'premium',
+    title: 'Premium Coaching Classes',
+    category: 'Specialised',
+    shortDescription: 'Exclusive small-batch coaching for personalized attention.',
+    whoItsFor: 'Students who need customized learning plans and intensive mentoring.',
+    classesCovered: ['Std 8', 'Std 9', 'Std 10', 'Std 11', 'Std 12'],
+    boardsCovered: ['CBSE', 'ICSE', 'Maharashtra State Board'],
+    streamsCovered: ['General', 'PCM', 'PCB', 'Commerce'],
+    subjects: ['All Core Subjects'],
+    learningApproach: ['1-on-1 mentoring', 'Custom pace learning', 'Frequent parent interactions'],
+    whatStudentsReceive: ['Personalized notes', 'Dedicated mentor', 'Flexible doubt sessions']
+  },
+  'ssc-borivali-west': {
+    id: 'ssc-borivali-west',
+    title: 'Best SSC Coaching Classes Borivali West',
+    category: 'School',
+    shortDescription: 'Top-rated SSC coaching in the heart of Borivali West.',
+    whoItsFor: 'Local students in Borivali West looking for the best State Board results.',
+    classesCovered: ['Std 8', 'Std 9', 'Std 10'],
+    boardsCovered: ['Maharashtra State Board'],
+    streamsCovered: ['General'],
+    subjects: ['All SSC Subjects'],
+    learningApproach: ['Textbook mastery', 'Exam strategy', 'Local convenience'],
+    whatStudentsReceive: ['Study material', 'Test series', 'Career counseling']
+  },
+  'icse-borivali-west': {
+    id: 'icse-borivali-west',
+    title: 'Best ICSE Coaching Classes Borivali West',
+    category: 'School',
+    shortDescription: 'Premier ICSE coaching in Borivali West.',
+    whoItsFor: 'ICSE students in Borivali West seeking rigorous academic preparation.',
+    classesCovered: ['Std 8', 'Std 9', 'Std 10'],
+    boardsCovered: ['ICSE'],
+    streamsCovered: ['General'],
+    subjects: ['All ICSE Subjects'],
+    learningApproach: ['In-depth concepts', 'Board-pattern tests', 'Expert ICSE faculty'],
+    whatStudentsReceive: ['ICSE specific notes', 'Prelim papers', 'Doubt solving']
+  },
+  'cbse-borivali-west': {
+    id: 'cbse-borivali-west',
+    title: 'Best CBSE Coaching Classes Borivali West',
+    category: 'School',
+    shortDescription: 'Leading CBSE coaching center in Borivali West.',
+    whoItsFor: 'CBSE students in Borivali West aiming for top board scores.',
+    classesCovered: ['Std 8', 'Std 9', 'Std 10'],
+    boardsCovered: ['CBSE'],
+    streamsCovered: ['General'],
+    subjects: ['All CBSE Subjects'],
+    learningApproach: ['NCERT focus', 'Application based learning', 'Regular assessment'],
+    whatStudentsReceive: ['NCERT solutions', 'Sample papers', 'Mentorship']
   }
 };

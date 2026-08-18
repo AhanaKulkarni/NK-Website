@@ -13,10 +13,11 @@
 
 .header.scrolled {
   height: 72px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .navContainer {
@@ -48,6 +49,13 @@
   gap: 2.5rem;
 }
 
+.navItem {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .navLink {
   font-size: 0.85rem;
   font-weight: 600;
@@ -56,12 +64,16 @@
   letter-spacing: 0.05em;
   position: relative;
   transition: color var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 0;
 }
 
 .navLink::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -80,6 +92,57 @@
   transform-origin: left;
 }
 
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover .chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(16, 43, 94, 0.1);
+  border: 1px solid rgba(16, 43, 94, 0.05);
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInDown 0.2s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownItem {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: all 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: rgba(229,57,53,0.05);
+  color: var(--color-accent);
+  padding-left: 2rem;
+}
+
+/* Actions */
 .actions {
   display: flex;
   align-items: center;
@@ -122,38 +185,82 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-background);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 6rem 2rem 2rem;
   z-index: 1005;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-10px);
+  transform: translateX(100%);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
 }
 
 .mobileMenu.open {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .mobileNavLinks {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  text-align: center;
+  width: 100%;
+  gap: 1rem;
   margin-bottom: 3rem;
+}
+
+.mobileNavItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid rgba(16,43,94,0.05);
+}
+
+.mobileNavLinkWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .mobileNavLink {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.5rem;
   color: var(--color-primary);
+  text-decoration: none;
+}
+
+.mobileDropdownBtn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0 1rem 1rem;
+  border-left: 2px solid rgba(229,57,53,0.2);
+  margin-left: 0.5rem;
+}
+
+.mobileDropdownItem {
+  font-size: 1.1rem;
+  color: var(--color-supporting);
+  padding: 0.5rem 0;
+  text-decoration: none;
 }
 
 .mobileCtaButton {
@@ -161,19 +268,21 @@
   color: white;
   padding: 1rem 2rem;
   border-radius: var(--radius-button);
-  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  width: 100%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 992px) {
-  .desktopNav, .ctaButton {
+  .desktopNav {
     display: none;
   }
-  
   .hamburger {
     display: block;
+  }
+  .ctaButton {
+    display: none;
   }
 }
