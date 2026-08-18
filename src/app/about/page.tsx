@@ -83,7 +83,7 @@ export default function AboutPage() {
       <section className={styles.valuesSection}>
         <div className={`container ${styles.valuesGrid}`}>
           
-          <Reveal>
+          <Reveal className={styles.valueCardWrapper}>
             <div className={styles.valueCard}>
               <div className={styles.valueCardContent}>
                 <div className={styles.valueIcon}>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          <Reveal delay={0.2} className={styles.valueCardWrapper}>
             <div className={styles.valueCard}>
               <div className={styles.valueCardContent}>
                 <div className={styles.valueIcon}>

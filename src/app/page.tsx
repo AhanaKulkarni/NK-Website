@@ -102,19 +102,22 @@ export default function Home() {
               </div>
 
               {/* Main Compass Area */}
-              <motion.div style={{ rotate: compassRotate }}>
+              <div style={{ position: 'relative', zIndex: 10 }}>
                 <motion.div 
-                  initial={{ rotate: -1440, scale: 0.5, opacity: 0 }}
-                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
-                  whileHover={{ scale: 1.15, rotate: 45 }}
-                  transition={{ 
-                    duration: 2.5, 
-                    type: "spring", 
-                    damping: 12, 
-                    stiffness: 40,
-                    opacity: { duration: 0.8 } 
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    rotate: [-1080, 0]
                   }}
-                  style={{ cursor: 'pointer', zIndex: 10, position: 'relative' }}
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  transition={{ 
+                    duration: 3, 
+                    ease: [0.16, 1, 0.3, 1], // Custom dramatic ease-out
+                    opacity: { duration: 1 },
+                    scale: { duration: 1.5, type: 'spring' }
+                  }}
+                  style={{ cursor: 'pointer' }}
                 >
                   {/* Abstract Compass SVG */}
                   <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +130,7 @@ export default function Home() {
                     <path d="M200 360 L180 220 L200 200 Z" fill="#0A1A3A"/>
                   </svg>
                 </motion.div>
-              </motion.div>
+              </div>
 
               {/* Floating Card 2 */}
               <div className={`${styles.floatingCard} ${styles.floatingCard2}`}>

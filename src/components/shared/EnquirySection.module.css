@@ -1,42 +1,95 @@
 .enquirySection {
-  background-color: white;
   padding: 6rem 0;
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.enquirySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(16,43,94,0.02) 0%, rgba(229,57,53,0.03) 100%);
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  z-index: 0;
 }
 
 .enquiryGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 .textContent {
-  color: var(--color-text);
-  font-size: 1rem;
-  line-height: 1.8;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  text-align: justify;
+}
+
+.textWrapper p {
+  color: var(--color-supporting);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
 }
 
 .highlightText {
+  font-size: 1.25rem !important;
   font-weight: 700;
-  color: var(--color-primary);
-  font-size: 1.1rem;
+  color: var(--color-accent) !important;
+  margin-top: 2rem;
 }
 
-.formContent {
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.formCard {
   width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(16, 43, 94, 0.08);
+  border: 1px solid rgba(16, 43, 94, 0.05);
+  position: relative;
+}
+
+.formCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
 }
 
 .formTitle {
   font-family: var(--font-display);
   font-size: 2rem;
   color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.formSubtitle {
+  font-size: 0.95rem;
+  color: var(--color-supporting);
   margin-bottom: 2rem;
-  font-weight: 700;
 }
 
 .enquiryForm {
@@ -47,49 +100,49 @@
 
 .inputField, .selectField {
   width: 100%;
-  padding: 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  font-size: 0.95rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 43, 94, 0.1);
+  background-color: var(--color-surface);
+  font-size: 1rem;
+  font-family: inherit;
   color: var(--color-text);
-  background-color: white;
-  transition: border-color var(--transition-fast);
-  outline: none;
+  transition: all 0.3s ease;
 }
 
 .inputField:focus, .selectField:focus {
+  outline: none;
   border-color: var(--color-primary);
-}
-
-.selectField {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23102B5E%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem top 50%;
-  background-size: 0.65rem auto;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(16,43,94,0.1);
 }
 
 .submitBtn {
-  background-color: var(--color-primary);
+  width: 100%;
+  padding: 1.2rem;
+  background-color: var(--color-accent);
   color: white;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
   cursor: pointer;
-  align-self: flex-start;
-  min-width: 150px;
-  transition: background-color var(--transition-fast);
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submitBtn:hover {
-  background-color: #0A1A3A;
+  background-color: #D32F2F;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(229, 57, 53, 0.2);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .enquiryGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
   }
 }

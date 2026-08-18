@@ -101,6 +101,10 @@
   z-index: 10;
 }
 
+.valueCardWrapper {
+  height: 100%;
+}
+
 .valueCard {
   background: white;
   padding: 3rem;
@@ -110,6 +114,7 @@
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .valueCard::before {
