@@ -63,13 +63,13 @@ export default function AboutPage() {
             
             <div className={styles.founderText}>
               <div className={styles.quote}>
-                "Learning from the best teachers is an experience that can sometimes be more profound than education itself."
+                &quot;Learning from the best teachers is an experience that can sometimes be more profound than education itself.&quot;
               </div>
               <p>
                 At NK Academy, we believe that learning from exceptional mentors is an experience more profound than the curriculum itself. We combine brilliant educators, meticulously crafted study materials, and rigorous practice to nurture academic excellence. 
               </p>
               <p>
-                Success requires dedication—we don't believe in shortcuts, but we provide the strongest foundation to help you climb higher. Driven by the philosophy that 'the best is yet to come,' we inspire continuous, competitive improvement in every student, leveraging modern technology to keep quality education at your fingertips.
+                Success requires dedication&mdash;we don&apos;t believe in shortcuts, but we provide the strongest foundation to help you climb higher. Driven by the philosophy that &apos;the best is yet to come,&apos; we inspire continuous, competitive improvement in every student, leveraging modern technology to keep quality education at your fingertips.
               </p>
               <p style={{ fontWeight: '600', color: 'var(--color-primary)', marginTop: '1rem' }}>
                 We are committed to delivering the highest quality education. NK Academy assures you: Your child is in safe hands.
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <div className={styles.testiCard}>
                 <Quote size={40} color="rgba(255,255,255,0.1)" style={{ marginBottom: '1rem' }} />
                 <p className={styles.testiText}>
-                  "Dear NK Mishra sir... today Aayushi's PA 1 result of Std. 8th was out. She has done pretty good in most of the subjects. Special mention of Science where she got 19/20 and Hindi as well. This is the first year we enrolled her to NK Academy and I am happy to see her progress in very short span of time."
+                  &quot;Dear NK Mishra sir... today Aayushi&apos;s PA 1 result of Std. 8th was out. She has done pretty good in most of the subjects. Special mention of Science where she got 19/20 and Hindi as well. This is the first year we enrolled her to NK Academy and I am happy to see her progress in very short span of time.&quot;
                 </p>
                 <div className={styles.testiAuthor}>
                   <div className={styles.testiAvatar}>K</div>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               <div className={styles.testiCard}>
                 <Quote size={40} color="rgba(255,255,255,0.1)" style={{ marginBottom: '1rem' }} />
                 <p className={styles.testiText}>
-                  "Best classes must say... teachers in these 3 years has always helped me... looked after every student with great efforts and has made a friendly environment between teachers and students. With our most experienced sanskrit teacher Nk sir. It was a wonderful time studying in nk academy which is not just an academy but a family."
+                  &quot;Best classes must say... teachers in these 3 years has always helped me... looked after every student with great efforts and has made a friendly environment between teachers and students. With our most experienced sanskrit teacher Nk sir. It was a wonderful time studying in nk academy which is not just an academy but a family.&quot;
                 </p>
                 <div className={styles.testiAuthor}>
                   <div className={styles.testiAvatar}>R</div>
