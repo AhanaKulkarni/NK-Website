@@ -21,6 +21,7 @@ for prog_id, (title, short_name, curriculum, location) in programs.items():
     content = f"""import React from 'react';
 import styles from '@/app/about/about.module.css';
 import {{ EnquirySection }} from '@/components/shared/EnquirySection';
+import {{ ClassesAccordion }} from '@/components/ui/Accordion';
 
 export const metadata = {{
   title: '{title} | NK Academy',
@@ -60,6 +61,8 @@ export default function Page() {{
           At NK Academy, the focus is not just on rote learning, but on conceptual clarity and application. The academy's teaching methods are designed to cater to the unique learning needs of every student, building confidence and deep subject knowledge.
         </p>
       </div>
+      
+      <ClassesAccordion />
       <EnquirySection />
     </div>
   );
