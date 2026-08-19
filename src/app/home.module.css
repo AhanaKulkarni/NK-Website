@@ -34,7 +34,7 @@
   font-family: var(--font-display);
   font-size: 25vw;
   font-weight: 900;
-  color: rgba(16, 43, 94, 0.02); /* Extremely faint navy */
+  color: rgba(16, 43, 94, 0.05); /* Faint navy, slightly more prominent */
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
@@ -317,6 +317,7 @@
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-diffuse);
   border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent); /* Added touch of color */
   transition: transform var(--transition-smooth);
 }
 
@@ -326,8 +327,9 @@
 
 .whyCardNum {
   font-family: var(--font-display);
-  font-size: 3rem;
-  color: rgba(16, 43, 94, 0.1);
+  font-size: 3.5rem;
+  color: var(--color-accent); /* Make it red instead of faint navy */
+  opacity: 0.2; /* Subtly colorful */
   margin-bottom: 1rem;
   line-height: 1;
 }

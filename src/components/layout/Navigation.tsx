@@ -78,7 +78,7 @@ export function Navigation() {
             >
               <Link 
                 href={link.href}
-                className={`${styles.navLink} ${pathname === link.href || pathname.startsWith(link.href + '/') ? styles.active : ''}`}
+                className={`${styles.navLink} ${pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? styles.active : ''}`}
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} className={styles.chevron} />}

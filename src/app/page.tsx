@@ -94,30 +94,30 @@ export default function Home() {
               
               {/* Floating Card 1 */}
               <div className={`${styles.floatingCard} ${styles.floatingCard1}`}>
-                <div className={styles.cardIcon}>
+                <div className={`${styles.cardIcon} ${styles.cardIconBlue}`}>
                   <Trophy size={24} />
                 </div>
                 <div className={styles.cardText}>
-                  <h4>98.8%</h4>
-                  <p>Highest Score 2025</p>
+                  <h4>98.4%</h4>
+                  <p>Highest Board Score</p>
                 </div>
               </div>
 
               {/* Main Compass Area */}
               <div style={{ position: 'relative', zIndex: 10 }}>
                 <motion.div 
-                  initial={{ opacity: 0, scale: 0.5 }}
+                  initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
                   animate={{ 
                     opacity: 1, 
                     scale: 1,
-                    rotate: [-1080, 0]
+                    rotate: -35
                   }}
-                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileHover={{ scale: 1.05, rotate: -45 }}
                   transition={{ 
-                    duration: 3, 
-                    ease: [0.16, 1, 0.3, 1], // Custom dramatic ease-out
-                    opacity: { duration: 1 },
-                    scale: { duration: 1.5, type: 'spring' }
+                    duration: 1.5, 
+                    type: 'spring',
+                    stiffness: 100,
+                    damping: 15
                   }}
                   style={{ cursor: 'pointer' }}
                 >
@@ -137,11 +137,11 @@ export default function Home() {
               {/* Floating Card 2 */}
               <div className={`${styles.floatingCard} ${styles.floatingCard2}`}>
                 <div className={`${styles.cardIcon} ${styles.cardIconRed}`}>
-                  <BookOpen size={24} />
+                  <Trophy size={24} />
                 </div>
                 <div className={styles.cardText}>
-                  <h4>4 Boards</h4>
-                  <p>Comprehensive Prep</p>
+                  <h4>99.38%tile</h4>
+                  <p>Highest Percentile</p>
                 </div>
               </div>
 

@@ -21,8 +21,36 @@ const bodyFont = Inter({
 import { EnquirySection } from "@/components/shared/EnquirySection";
 
 export const metadata: Metadata = {
-  title: "NK Academy | The Direction of Success",
-  description: "Borivali's most trusted coaching institute for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE and Sanskrit.",
+  metadataBase: new URL('https://nkacademy.in'),
+  title: {
+    default: "NK Academy | Best Coaching Classes in Borivali",
+    template: "%s | NK Academy",
+  },
+  description: "Borivali's most trusted coaching institute for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE and Sanskrit. Expert faculty and top results.",
+  keywords: ["Coaching classes in Borivali", "Best CBSE classes", "Best ICSE classes", "SSC coaching", "NEET coaching Borivali", "JEE institute", "NK Academy"],
+  openGraph: {
+    title: "NK Academy | The Direction of Success",
+    description: "Borivali's most trusted coaching institute for SSC, CBSE, ICSE, Science, Commerce, NEET, JEE and Sanskrit.",
+    url: 'https://nkacademy.in',
+    siteName: 'NK Academy',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: "NK Academy | The Direction of Success",
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
