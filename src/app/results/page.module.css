@@ -6,7 +6,8 @@
 .hero {
   background-color: var(--color-primary);
   color: white;
-  padding: calc(90px + 4rem) 0 5rem;
+  margin-top: 90px;
+  padding: 4rem 0 5rem;
   text-align: center;
 }
 
