@@ -2,10 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, MoveRight, Trophy, BookOpen } from 'lucide-react';
+import { ArrowRight, Trophy, BookOpen, MoveRight } from 'lucide-react';
 import { ToppersCarousel } from '@/components/home/ToppersCarousel';
-import { EnquirySection } from '@/components/shared/EnquirySection';
 import styles from './home.module.css';
+
+// Reusable scroll reveal component
 
 // Reusable scroll reveal component
 const Reveal = ({ children, delay = 0, className = "" }: any) => {
@@ -340,7 +341,6 @@ export default function Home() {
         </div>
       </section>
       
-      <EnquirySection />
     </div>
   );
 }
