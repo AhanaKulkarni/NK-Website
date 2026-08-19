@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MoveRight, Trophy, BookOpen } from 'lucide-react';
 import { ToppersCarousel } from '@/components/home/ToppersCarousel';
+import { EnquirySection } from '@/components/shared/EnquirySection';
 import styles from './home.module.css';
 
 // Reusable scroll reveal component
@@ -339,6 +340,7 @@ export default function Home() {
         </div>
       </section>
       
+      <EnquirySection />
     </div>
   );
 }
