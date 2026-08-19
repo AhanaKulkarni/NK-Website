@@ -121,36 +121,53 @@ export default function Home() {
                   }}
                   style={{ cursor: 'pointer' }}
                 >
-                  {/* Abstract Compass SVG */}
                   <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Outer rings */}
-                    <circle cx="200" cy="200" r="180" stroke="var(--color-primary)" strokeWidth="16" strokeDasharray="80 30" strokeLinecap="round"/>
-                    <circle cx="200" cy="200" r="140" stroke="var(--color-accent)" strokeWidth="2" strokeDasharray="10 10"/>
+                    {/* Outer thick blue ring (dashed, gaps at N, S, E, W) */}
+                    <circle cx="200" cy="200" r="160" stroke="var(--color-primary)" strokeWidth="16" strokeDasharray="18 7" pathLength="100" strokeDashoffset="21.5" strokeLinecap="round"/>
                     
+                    {/* Inner thin red ring */}
+                    <circle cx="200" cy="200" r="120" stroke="var(--color-accent)" strokeWidth="4" />
+                    
+                    {/* Small Star (Background points) */}
+                    {/* NW Small Point */}
+                    <path d="M 110 110 L 175 200 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 110 110 L 200 175 L 200 200 Z" fill="#b71c1c"/>
+                    
+                    {/* NE Small Point */}
+                    <path d="M 290 110 L 200 175 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 290 110 L 225 200 L 200 200 Z" fill="#b71c1c"/>
+                    
+                    {/* SE Small Point */}
+                    <path d="M 290 290 L 225 200 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 290 290 L 200 225 L 200 200 Z" fill="#b71c1c"/>
+                    
+                    {/* SW Small Point */}
+                    <path d="M 110 290 L 200 225 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 110 290 L 175 200 L 200 200 Z" fill="#b71c1c"/>
+
+                    {/* Main Star (Foreground points) */}
                     {/* North Point */}
-                    <path d="M200 30 L170 170 L200 200 Z" fill="var(--color-primary)"/>
-                    <path d="M200 30 L230 170 L200 200 Z" fill="var(--color-accent)"/>
+                    <path d="M 200 30 L 175 175 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 200 30 L 225 175 L 200 200 Z" fill="var(--color-accent)"/>
                     
                     {/* East Point */}
-                    <path d="M370 200 L230 170 L200 200 Z" fill="var(--color-primary)"/>
-                    <path d="M370 200 L230 230 L200 200 Z" fill="var(--color-accent)"/>
+                    <path d="M 370 200 L 225 175 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 370 200 L 225 225 L 200 200 Z" fill="var(--color-accent)"/>
                     
                     {/* South Point */}
-                    <path d="M200 370 L230 230 L200 200 Z" fill="var(--color-primary)"/>
-                    <path d="M200 370 L170 230 L200 200 Z" fill="var(--color-accent)"/>
+                    <path d="M 200 370 L 225 225 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 200 370 L 175 225 L 200 200 Z" fill="var(--color-accent)"/>
                     
                     {/* West Point */}
-                    <path d="M30 200 L170 230 L200 200 Z" fill="var(--color-primary)"/>
-                    <path d="M30 200 L170 170 L200 200 Z" fill="var(--color-accent)"/>
-
-                    {/* Small inner points (Red) */}
-                    <path d="M250 150 L230 170 L200 200 Z" fill="var(--color-accent)"/>
-                    <path d="M250 250 L230 230 L200 200 Z" fill="var(--color-accent)"/>
-                    <path d="M150 250 L170 230 L200 200 Z" fill="var(--color-accent)"/>
-                    <path d="M150 150 L170 170 L200 200 Z" fill="var(--color-accent)"/>
+                    <path d="M 30 200 L 175 225 L 200 200 Z" fill="var(--color-primary)"/>
+                    <path d="M 30 200 L 175 175 L 200 200 Z" fill="var(--color-accent)"/>
                     
                     {/* Center dot */}
-                    <circle cx="200" cy="200" r="12" fill="white"/>
+                    <circle cx="200" cy="200" r="10" fill="white"/>
+                    
+                    {/* N Letter & Flame tip at the top */}
+                    <path d="M 200 5 L 195 20 L 205 20 Z" fill="var(--color-accent)"/>
+                    <text x="200" y="24" fill="var(--color-accent)" fontSize="20" fontWeight="900" textAnchor="middle" fontFamily="sans-serif">N</text>
                   </svg>
                 </motion.div>
               </div>

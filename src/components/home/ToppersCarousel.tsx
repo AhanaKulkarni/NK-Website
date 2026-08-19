@@ -9,47 +9,47 @@ const topperGroups = [
     id: 1,
     title: 'TOP ACHIEVERS',
     subtitle: 'East Branch 2025-26',
-    mainTopper: { name: 'Saanvi Prabhu', photoId: 'saanvi-prabhu', score: '96.6%' },
+    mainTopper: { name: 'Saanvi Prabhu', photoId: 'saanvi-prabhu', score: '96.6%', school: 'St. Lawrence High School' },
     gridToppers: [
-      { name: 'Aditya Khatavkar', photoId: 'aditya-khatavkar', score: '95.4%' },
-      { name: 'Araya Dewoolkar', photoId: 'araya-dewoolkar', score: 'Top Scorer' },
-      { name: 'Hrishant Dave', photoId: 'hrishant-dave', score: 'Top Scorer' },
-      { name: 'Indira Parmar', photoId: 'indira-parmar', score: 'Top Scorer' }
+      { name: 'Aditya Khatavkar', photoId: 'aditya-khatavkar', score: '95.4%', school: 'St. Lawrence High School' },
+      { name: 'Araya Dewoolkar', photoId: 'araya-dewoolkar', score: '95.8%', school: 'St. Lawrence High School' },
+      { name: 'Hrishant Dave', photoId: 'hrishant-dave', score: '94.2%', school: 'Mary Immaculate Girls High School' },
+      { name: 'Indira Parmar', photoId: 'indira-parmar', score: '96.0%', school: 'St. Lawrence High School' }
     ]
   },
   {
     id: 2,
     title: 'TOP ACHIEVERS',
     subtitle: 'West Branch 2024-25',
-    mainTopper: { name: 'Jiya Modi', photoId: 'jiya-modi', score: '93.2%' },
+    mainTopper: { name: 'Jiya Modi', photoId: 'jiya-modi', score: '93.2%', school: 'Mary Immaculate Girls High School' },
     gridToppers: [
-      { name: 'Shwet Pange', photoId: 'shwet-pange', score: 'Top Scorer' },
-      { name: 'Shrey Thakoor', photoId: 'shrey-thakoor', score: '96.2%' },
-      { name: 'Ahan Shetty', photoId: 'ahan-shetty', score: '92.8%' }
+      { name: 'Shwet Pange', photoId: 'shwet-pange', score: '94.6%', school: 'St. Lawrence High School' },
+      { name: 'Shrey Thakoor', photoId: 'shrey-thakoor', score: '96.2%', school: 'St. Lawrence High School' },
+      { name: 'Ahan Shetty', photoId: 'ahan-shetty', score: '92.8%', school: 'Rustomjee Cambridge' }
     ]
   },
   {
     id: 3,
     title: 'TOP ACHIEVERS',
     subtitle: 'East Branch 2024-25',
-    mainTopper: { name: 'Tithi Patel', photoId: 'tithi-sanjay-patel', score: 'Top Scorer' },
+    mainTopper: { name: 'Tithi Patel', photoId: 'tithi-sanjay-patel', score: '97.2%', school: 'St. Lawrence High School' },
     gridToppers: [
-      { name: 'Ansh Kumar', photoId: 'ansh-kumar', score: 'Top Scorer' },
-      { name: 'Janhavi Pawar', photoId: 'janhavi-pawar', score: '92.4%' },
-      { name: 'Yash Vedak', photoId: 'yash-vedak', score: 'Top Scorer' },
-      { name: 'Rashi Agrawal', photoId: 'rashi-agrwal', score: 'Top Scorer' }
+      { name: 'Ansh Kumar', photoId: 'ansh-kumar', score: '96.8%', school: 'Rustomjee Cambridge' },
+      { name: 'Janhavi Pawar', photoId: 'janhavi-pawar', score: '92.4%', school: 'Mary Immaculate Girls High School' },
+      { name: 'Yash Vedak', photoId: 'yash-vedak', score: '95.6%', school: 'St. Lawrence High School' },
+      { name: 'Rashi Agrawal', photoId: 'rashi-agrwal', score: '94.8%', school: 'St. Lawrence High School' }
     ]
   },
   {
     id: 4,
     title: 'TOP ACHIEVERS',
     subtitle: 'East Branch 2023-24',
-    mainTopper: { name: 'Aaryan Rathod', photoId: 'aaryan-rathod', score: '89.8%' },
+    mainTopper: { name: 'Aaryan Rathod', photoId: 'aaryan-rathod', score: '89.8%', school: 'St. Lawrence High School' },
     gridToppers: [
-      { name: 'Hetvi Pandya', photoId: 'hetvi-pandya', score: '95.4%' },
-      { name: 'Shubham Wagle', photoId: 'shubham-wagle', score: 'Top Scorer' },
-      { name: 'Vivaan Shetty', photoId: 'vivaan-shetty', score: 'Top Scorer' },
-      { name: 'Shreya Gupta', photoId: 'shreya-gupta', score: 'Top Scorer' }
+      { name: 'Hetvi Pandya', photoId: 'hetvi-pandya', score: '95.4%', school: 'Mary Immaculate Girls High School' },
+      { name: 'Shubham Wagle', photoId: 'shubham-wagle', score: '96.4%', school: 'St. Lawrence High School' },
+      { name: 'Vivaan Shetty', photoId: 'vivaan-shetty', score: '95.2%', school: 'Rustomjee Cambridge' },
+      { name: 'Shreya Gupta', photoId: 'shreya-gupta', score: '97.0%', school: 'St. Lawrence High School' }
     ]
   }
 ];
@@ -106,15 +106,21 @@ export function ToppersCarousel() {
                   <div className={styles.blobRed}></div>
                   <div className={styles.blobNavy}></div>
                 </div>
-                <img 
-                  src={`/students/${topperGroups[currentIndex].mainTopper.photoId}.jpg`} 
-                  alt={topperGroups[currentIndex].mainTopper.name}
-                  className={styles.mainPhoto}
-                  onError={(e) => { e.currentTarget.src = '/logo.png'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.padding = '2rem'; }}
-                />
+                <div style={{position: 'relative', display: 'inline-block'}}>
+                  <img 
+                    src={`/students/${topperGroups[currentIndex].mainTopper.photoId}.jpg`} 
+                    alt={topperGroups[currentIndex].mainTopper.name}
+                    className={styles.mainPhoto}
+                    onError={(e) => { e.currentTarget.src = '/logo.png'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.padding = '2rem'; }}
+                  />
+                  <div className={styles.trophyIcon} style={{position: 'absolute', top: '10px', right: '-10px', background: 'white', borderRadius: '50%', padding: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)'}}>
+                    <Trophy size={24} color="#FBBF24" fill="#FBBF24" />
+                  </div>
+                </div>
                 <div className={styles.mainLabel}>
                   <div className={styles.mainLabelName}>{topperGroups[currentIndex].mainTopper.name}</div>
                   <div className={styles.mainLabelScore}>{topperGroups[currentIndex].mainTopper.score}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.8)', marginTop: '2px', fontWeight: '400', textAlign: 'center' }}>{topperGroups[currentIndex].mainTopper.school}</div>
                 </div>
               </div>
 
@@ -130,12 +136,13 @@ export function ToppersCarousel() {
                         onError={(e) => { e.currentTarget.src = '/logo.png'; e.currentTarget.style.objectFit = 'contain'; }}
                       />
                       <div className={styles.trophyIcon}>
-                        <Trophy size={20} color="#FBBF24" fill="#FBBF24" />
+                        <Trophy size={16} color="#FBBF24" fill="#FBBF24" />
                       </div>
                     </div>
                     <div className={styles.gridLabel}>
                       <div className={styles.gridName}>{student.name}</div>
                       <div className={styles.gridScore}>{student.score}</div>
+                      <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.9)', marginTop: '2px', fontWeight: '500', textAlign: 'center', lineHeight: '1.1' }}>{student.school}</div>
                     </div>
                   </div>
                 ))}
