@@ -106,14 +106,15 @@ export function ToppersCarousel() {
                   <div className={styles.blobRed}></div>
                   <div className={styles.blobNavy}></div>
                 </div>
-                <div style={{position: 'relative', display: 'inline-block'}}>
+                <div style={{position: 'relative', display: 'inline-flex', height: '90%', maxWidth: '100%', justifyContent: 'center'}}>
                   <img 
                     src={`/students/${topperGroups[currentIndex].mainTopper.photoId}.jpg`} 
                     alt={topperGroups[currentIndex].mainTopper.name}
                     className={styles.mainPhoto}
+                    style={{ height: '100%', maxWidth: '100%', objectFit: 'cover' }}
                     onError={(e) => { e.currentTarget.src = '/logo.png'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.padding = '2rem'; }}
                   />
-                  <div className={styles.trophyIcon} style={{position: 'absolute', top: '10px', right: '-10px', background: 'white', borderRadius: '50%', padding: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)'}}>
+                  <div className={styles.trophyIcon} style={{position: 'absolute', top: '10px', left: '-10px', background: 'white', borderRadius: '50%', padding: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)'}}>
                     <Trophy size={24} color="#FBBF24" fill="#FBBF24" />
                   </div>
                 </div>
