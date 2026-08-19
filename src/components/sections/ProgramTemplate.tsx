@@ -30,11 +30,7 @@ export function ProgramTemplate({ programId }: { programId: string }) {
                 Book Free Demo Class
               </Button>
             </Link>
-            <Link href={`/resources/syllabus?program=${program.id}`}>
-              <Button variant="outline" size="large" style={{ borderRadius: '50px', borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>
-                View Full Syllabus
-              </Button>
-            </Link>
+
           </div>
         </div>
       </section>

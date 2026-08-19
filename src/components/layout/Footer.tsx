@@ -94,7 +94,7 @@ export function Footer() {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', flexWrap: 'wrap' }}>
           <p>Copyright {new Date().getFullYear()} NK Academy. All Rights Reserved.</p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <Link href="/privacy" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Privacy Policy</Link>
+            <Link href="/contact" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Privacy Policy</Link>
             <Link href="/contact" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Contact Us</Link>
           </div>
         </div>
